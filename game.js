@@ -1,167 +1,179 @@
 var score = 0; // The score will increment by one with each correct answer
 
-// Variables set for each of the six questions.
-var q1 = document.getElementById('q1');
-var q2 = document.getElementById('q2');
-var q3 = document.getElementById('q3');
-var q4 = document.getElementById('q4');
-var q5 = document.getElementById('q5');
-var q6 = document.getElementById('q6');
+// Variables set for each of the six questions, their answers.
 
+var n1 = "Have I been to Europe?";
+var n2 = "Can I do a cartwheel?";
+var n3 = "Have I ever broken a bone?";
+var n4 = "At what age did I start doing gymnastics, one of my favorite sports?";
+var n5 = "Do I drive a hybrid car??";
+var n6 = "How many languages can I speak fluently?";
+
+var q = [n1, n2, n3, n4, n5, n6];
+var a = [['no','n'], ['yes', 'y'], 10, 1];
+
+function correct(guessN, qN) { // Function for correct answers,
+  // where 'guessN' is for the 'guess_' variables, and 'qN' is for the 'q_' id's
+
+    score++;
+    console.log(score);
+    document.getElementById('qN');
+    qN.innerHTML = "You answered " + guessN + ". <br />"
+    qN.innerHTML += ("That's correct, " + name + "! ");
+
+}
+
+function incorrect(guessN, qN) { // Function for incorrect answers
+
+  document.getElementById('a');
+  qN.innerHTML = "You answered " + guessN + ". <br />"
+  qN.innerHTML += "Sorry, that's incorrect, " + name + ". ";
+
+}
+
+// End of basic var and function declarations.
 // Asking for user's name at the beginning, so to create personalized messages
 
 var name = prompt("What's your name?", "Name here!");
-alert("It's nice to meet you, " + name + ". Let's guess some things about me!")
-
-function correct(question) { // Function for correct answers
-
-    score++;
-    console.log(question);
-    question.innerHTML = ("That's correct, " + name + "! <br />");
-
-}
-
-function incorrect(question) { // Function for incorrect answers
-
-  question.innerHTML = "Sorry, that's incorrect, " + name + ".<br />";
-
-}
+document.getElementById("nameWrite");
+nameWrite.innerHTML = "It's nice to meet you, " + name + ". Let's see how you do!";
 
 // We begin the questions here.
 // Question 1
+var guess1 = prompt(q[0]).toLowerCase();
 
-var guess1 = prompt('Have I been to Europe? Write "yes" or "no".').toLowerCase();
-alert('You answered ' + guess1 + '.');
+var innerArrayQuestion1 = a[0];
 
-if ((guess1 === 'no')||(guess1 === 'n')) { // Correct answer is 'no'
+if (innerArrayQuestion1.indexOf(guess1) != -1) { // Correct answer is 'no'
 
-  correct(q1);
+  correct(guess1, q1);
   q1.innerHTML += "Maybe one day, I'll go...";
 
 }
 
 else {
 
-  incorrect(q1);
+  incorrect(guess1, q1);
   q1.innerHTML += "I haven't actually been to Europe. Maybe one day, though.";
 
 };
 
 // Question 2
 
-var guess2 = prompt('Can I do a cartwheel? Write "yes" or "no".').toLowerCase();
-alert('You answered ' + guess2 + '.');
+var guess2 = prompt(q[1]).toLowerCase();
 
-if ((guess2 === 'yes')||(guess2 === 'y')) { // Correct answer is 'yes'
+var innerArrayQuestion2 = a[1];
 
-  correct(q2);
+if (innerArrayQuestion2.indexOf(guess2) != -1) { // Correct answer is 'yes'
+
+  correct(guess2, q2);
   q2.innerHTML += "Whee! Watch this! *cartwheels*";
 
 }
 
 else {
 
-  incorrect(q2);
-  q2.innerHTML += "And I lament that you doubt me. Watch this! *cartwheels sadly*";
+  incorrect(guess2, q2);
+  q2.innerHTML += "I lament that you doubt me... *cartwheels sadly*";
 
 }
 
 // Question 3
 
-var guess3 = prompt('Have I ever broken a bone? Write "yes" or "no".').toLowerCase();
-alert('You answered ' + guess3 + '.');
+var guess3 = prompt(q[2]).toLowerCase();
 
-if ((guess3 === 'no')||(guess3 === 'n')) { // Correct answer is 'no'
+var innerArrayQuestion3 = a[0];
 
-  correct(q3);
+if (innerArrayQuestion3.indexOf(guess3) != -1) { // Correct answer is 'no'
+
+  correct(guess3, q3);
   q3.innerHTML += "No bones broken! Yet...";
 
 }
 else {
 
-  incorrect(q3);
+  incorrect(guess3, q3);
   q3.innerHTML += "I've managed to stay lucky!";
 
 };
 
 // Question 4, a numeric one!
 
-var guess4 = parseInt(prompt('At what age did I start doing gymnastics, one of my favorite sports? Enter a number only, no letters!'));
+var guess4 = parseInt(prompt(q[3]));
 // I don't quite know how to require numeric input in order for
 // the answer to submit at all, quite yet. For now, a NaN answer
 // is simply incorrect. That's what the user gets for not
 // following instructions!!
-alert("You guessed age " + guess4 + ".");
 
-if (guess4 === 10) { // Correct answer is 10 years
+if (guess4 === a[2]) { // Correct answer is 10 years
 
-  correct(q4);
+  correct(guess4, q4);
   q4.innerHTML += "Yup, 10 years old.";
 
 }
 
-else if (guess4 < 10) { // User inputs less than 10
+else if (guess4 < a[2]) { // User inputs less than 10
 
-  incorrect(q4);
+  incorrect(guess4, q4);
   q4.innerHTML += "I didn't start quite THAT young.";
 
 }
 
-else if (guess4 > 10) { // User input is more than 10
+else if (guess4 > a[2]) { // User input is more than 10
 
-  incorrect(q4);
+  incorrect(guess4, q4);
   q4.innerHTML += "I didn't start THAT late.";
 
 }
 
 else { // User inputs NaN
 
-  incorrect(q4);
+  incorrect(guess4, q4);
   q4.innerHTML += "I can only parse numbers here, not letters :(";
 
 }
 
 /// Question 5
 
-var guess5 = prompt('Do I drive a hybrid car?? Write "yes" or "no".').toLowerCase();
-alert('You answered ' + guess5 + '. And...');
+var guess5 = prompt(q[4]).toLowerCase();
 
-if ((guess5 === 'yes')||(guess5 === 'y')) { // Correct answer is 'yes'
+var innerArrayQuestion5 = a[1];
 
-  correct(q5);
+if (innerArrayQuestion5.indexOf(guess5) != -1) { // Correct answer is 'yes'
+
+  correct(guess5, q5);
   q5.innerHTML += "My little '02 Prius gets me places. Vroom vroom.";
 
 }
 
 else {
 
-  incorrect(q5);
+  incorrect(guess5, q5);
   q5.innerHTML += "My little ol' Prius is definitely a hybrid!"
 
 };
 
 // Question 6 - last one.
 
-var guess6 = parseInt(prompt('How many languages can I speak fluently? Enter a number only.'));
-alert("You guessed " + guess6 + " languages.");
+var guess6 = parseInt(prompt(q[5]));
 
-if (guess6 === 1) { // Correct answer is just one language.
+if (guess6 === a[3]) { // Correct answer is just one language.
 
-  correct(q6);
+  correct(guess6, q6);
   q6.innerHTML += "Just good ol' English."
 
 }
 
-else if (guess6 < 1) { // User input is less than 1?!?
+else if (guess6 < a[3]) { // User input is less than 1?!?
 
-  incorrect(q6);
+  incorrect(guess6, q6);
   q6.innerHTML += "That would stink a lot if that were true, eh?"
 
 }
 
-else if (guess6 > 1) { // User input is more than 1 language
+else if (guess6 > a[3]) { // User input is more than 1 language
 
-  incorrect(q6);
+  incorrect(guess6, q6);
   q6.innerHTML += "I wish I could fluently speak " + guess6 + " languages, though!"
 
 }
