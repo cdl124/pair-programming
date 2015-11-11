@@ -13,3 +13,6 @@ I must also give credit to my fiance - he's a software engineer, and he helps me
 
 I learned to use indexOf() here (by suggestion of the fiance):
 http://stackoverflow.com/questions/12623272/how-to-check-if-a-string-array-contains-one-string-in-javascript
+
+How to set td widths using CSS:
+http://stackoverflow.com/questions/4457506/set-the-table-column-width-constant-regardless-of-the-amount-of-text-in-its-cell

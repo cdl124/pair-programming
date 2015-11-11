@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+<!--   <link rel="stylesheet" type="text/css" href="style.css"> -->
     <title>Cort's Personalized Guessing Game</title>
   </head>
   <body>
@@ -11,18 +12,37 @@
       For numeric-input answers, only write a number - no letters!</p>
     <p>But first, the formalities - let's get your name.</p>
     <p id="nameWrite"></p>
-      <h3>Have I been to Europe?</h3>
-      <p id="q1"></p>
-      <h3>Can I do a cartwheel?</h3>
-      <p id="q2"></p>
-      <h3>Have I ever broken a bone?</h3>
-      <p id="q3"></p>
-      <h3>At what age did I start doing gymnastics, one of my favorite sports?</h3>
-      <p id="q4"></p>
-      <h3>Do I drive a hybrid car??</h3>
-      <p id="q5"></p>
-      <h3>How many languages can I speak fluently?</h3>
-      <p id="q6"></p>
+
+    <table>
+    <tr>
+    <td>
+      <h4>Have I been to Europe?</h4>
+      <p id="q1"><span id="img1"></span></p>
+    </td>
+    <td>
+      <h4>Can I do a cartwheel?</h4>
+      <p id="q2"><span id="img2"></span></p>
+    </td>
+    <td>
+      <h4>Have I ever broken a bone?</h4>
+      <p id="q3"><span id="img3"></span></p>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <h4>At what age did I start doing<br />gymnastics, one of my favorite sports?</h4>
+      <p id="q4"><span id="img4"></span></p>
+    </td>
+    <td>
+      <h4>Do I drive a hybrid car??</h4>
+      <p id="q5"><span id="img5"></span></p>
+    </td>
+    <td>
+      <h4>How many languages can I speak fluently?</h4>
+      <p id="q6"><span id="img6"></span></p>
+    </td>
+    </tr>
+    </table>
 
       <p id="total"></p>
     <script src="game.js"></script>
