@@ -20,6 +20,7 @@ function correct(guessN, imgN, qN) { // Function for correct answers,
     document.getElementById('imgN');
     imgN.innerHTML = "<img align='left' height='50' src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Checkmark_green.svg/834px-Checkmark_green.svg.png' />"
     document.getElementById('qN');
+    qN.className = 'correct';
     qN.innerHTML += "You answered " + guessN + ". <br />"
     qN.innerHTML += ("That's correct, " + name + "! ");
 
@@ -30,6 +31,7 @@ function incorrect(guessN, imgN, qN) { // Function for incorrect answers
   document.getElementById('imgN');
   imgN.innerHTML = "<img align='left' height='50' src='https://upload.wikimedia.org/wikipedia/commons/f/f1/Heavy_red_%22x%22.png' />"
   document.getElementById('a');
+  qN.className = 'incorrect';
   qN.innerHTML += "You answered " + guessN + ". <br />"
   qN.innerHTML += "Sorry, that's incorrect, " + name + ". ";
 
