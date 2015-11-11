@@ -38,7 +38,7 @@ function incorrect(guessN, imgN, qN) { // Function for incorrect answers
 }
 
 // End of basic var and function declarations.
-// Asking for user's name at the beginning, so to create personalized messages
+// Now asking for user's name at the beginning, so to create personalized messages
 
 var name = prompt("What's your name?", "Name here!");
 document.getElementById("nameWrite");
@@ -46,6 +46,7 @@ nameWrite.innerHTML = "It's nice to meet you, " + name + ". Let's see how you do
 
 // We begin the questions here.
 // Question 1
+
 var guess1 = prompt(q[0]).toLowerCase();
 
 var innerArrayQuestion1 = a[0];
@@ -96,6 +97,7 @@ if (innerArrayQuestion3.indexOf(guess3) != -1) { // Correct answer is 'no'
   q3.innerHTML += "No bones broken! Yet...";
 
 }
+
 else {
 
   incorrect(guess3, img3, q3);
